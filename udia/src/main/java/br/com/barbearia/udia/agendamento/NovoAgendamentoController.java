@@ -2,7 +2,6 @@ package br.com.barbearia.udia.agendamento;
 
 import br.com.barbearia.udia.barbeiro.BarbeiroRepository;
 import br.com.barbearia.udia.cliente.ClienteRepository;
-import br.com.barbearia.udia.procedimento.Procedimento;
 import br.com.barbearia.udia.procedimento.ProcedimentoRepository;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -13,8 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.net.URI;
-import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 public class NovoAgendamentoController {
@@ -48,7 +45,7 @@ public class NovoAgendamentoController {
 
         //TODO:Ao colocar autenticação, pegar cliente logado.
         var cliente = clienteRepository
-                .findById(request.clientId())
+                .findById(request.clienteId())
                 .orElseThrow(() ->
                         new ResponseStatusException(HttpStatus.NOT_FOUND, "Cliente inválido ou nao existente."));
 

@@ -15,7 +15,7 @@ public class BucaAgendamentoController {
         this.agendamentoRepository = agendamentoRepository;
     }
 
-    @GetMapping("v1/agdendamento/{id}")
+    @GetMapping("v1/agendamento/{id}")
     public AgendamentoResponse busca(@PathVariable Long id){
 
         var agendamento = agendamentoRepository

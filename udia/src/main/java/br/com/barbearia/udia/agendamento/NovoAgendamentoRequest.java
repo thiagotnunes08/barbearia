@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public record NovoAgendamentoRequest(@NotNull Long barbeiroId,
-                                     @NotNull Long clientId,
+                                     @NotNull Long clienteId,
                                      @FutureOrPresent @NotNull @JsonFormat(pattern = "dd/MM/yyyy HH:mm") LocalDateTime horario,
                                      @NotEmpty List<Long> procedimentosIds) {
 

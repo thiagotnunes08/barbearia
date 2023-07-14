@@ -30,7 +30,7 @@ public class ValidacoesComHorarioService {
             throw new ResponseStatusException(BAD_REQUEST, "Barbeiro estara em horário de almoço.");
         }
 
-        if (repository.buscaAgendamentoPorHorarioEClienteOuBarbeiro(request.horario(), request.barbeiroId(), request.clientId()).isPresent()) {
+        if (repository.buscaAgendamentoPorHorarioEClienteOuBarbeiro(request.horario(), request.barbeiroId(), request.clienteId()).isPresent()) {
             throw new ResponseStatusException(BAD_REQUEST, "Já existe um agendamento para o barbeiro ou cliente neste horário.");
         }
     }
